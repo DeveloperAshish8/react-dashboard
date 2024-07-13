@@ -35,3 +35,9 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
+### To run this app locally
+
+- CLone the repo in my local device
+- Run `npm install`
+- then `npm start`
+
