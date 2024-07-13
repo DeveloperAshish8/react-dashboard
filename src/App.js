@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+// import "./App.css";
 
-function App() {
+import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import UserList from "./pages/UserList";
+import PostList from "./pages/PostList";
+import NavBar from "./components/Navbar";
+import Login from "./components/Login";
+
+const App = () => {
+  const [authenticated, setAuthenticated] = useState(false);
+
+  // if (!authenticated) {
+  //   return <Login setAuthenticated={setAuthenticated} />;
+  // }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex bg-slate-100">
+      <NavBar />
+      <div className="w-3/4 p-4 mx-auto ">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/users" element={<UserList />} />
+          <Route path="/posts" element={<PostList />} />
+        </Routes>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
